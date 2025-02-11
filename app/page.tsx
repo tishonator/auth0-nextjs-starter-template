@@ -1,4 +1,4 @@
-"use client";  // 👈 This is required to use `useUser()`
+"use client";  // ✅ Required for Auth0 authentication
 
 import { useUser } from "@auth0/nextjs-auth0/client";
 
@@ -11,16 +11,27 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <h1 className="text-4xl font-bold">Auth0 Next.js Starter Template</h1>
+
       {!user ? (
-        <a href="/api/auth/login" className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-md">
-          Login
-        </a>
+        <form action="/api/auth/login" method="post">
+          <button
+            type="submit"
+            className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-md"
+          >
+            Login
+          </button>
+        </form>
       ) : (
         <>
           <p className="mt-4 text-lg text-gray-700">Welcome, {user.name}!</p>
-          <a href="/api/auth/logout" className="mt-4 px-6 py-2 bg-red-600 text-white rounded-md">
-            Logout
-          </a>
+          <form action="/api/auth/logout" method="post">
+            <button
+              type="submit"
+              className="mt-4 px-6 py-2 bg-red-600 text-white rounded-md"
+            >
+              Logout
+            </button>
+          </form>
         </>
       )}
     </div>
