@@ -7,6 +7,10 @@ Auth0 + Next.js 15 + TypeScript + Tailwind starter template
 - ✅ **TypeScript & Tailwind CSS**
 - ✅ Works with **Vercel Deployment**
 
+
+## **🚀 Live Demo**
+👉 **[Try the Demo Here](https://auth0-nextjs-starter-template.vercel.app/)**  
+
 ## Installation
 
 Clone the repo and install dependencies:
@@ -22,10 +26,17 @@ Go to Auth0 Dashboard
 Create a new application → Single Page Application
 
 Set Allowed Callback URLs:
-http://localhost:3000/api/auth/callback
+http://localhost:3000/api/auth/callback,
+https://auth0-nextjs-starter-template.vercel.app/api/auth/callback
 
 Set Allowed Logout URLs:
-http://localhost:3000
+http://localhost:3000,
+https://auth0-nextjs-starter-template.vercel.app
+
+Set Allowed Web Origins:
+http://localhost:3000,
+https://auth0-nextjs-starter-template.vercel.app
+
 
 Copy Domain, Client ID, and Client Secret to .env.local:
 
